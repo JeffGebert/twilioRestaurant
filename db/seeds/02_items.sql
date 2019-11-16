@@ -34,3 +34,4 @@ VALUES ('8', 'Beef Tacos', 10, '', 'Beef Tacos made homemade style');
 
 INSERT INTO items (id, name, price, image_url, description)
 VALUES ('9', 'Exotic Venezuelan Sausage', 5, '', 'Imported from Venezuela');
+--adedd comment
