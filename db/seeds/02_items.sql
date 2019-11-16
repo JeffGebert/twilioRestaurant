@@ -1,8 +1,4 @@
--- Widgets table seeds here (Example)
-INSERT INTO widgets (name, user_id) VALUES ('Sprockets', 1);
-INSERT INTO widgets (name, user_id) VALUES ('Chains', 2);
-INSERT INTO widgets (name, user_id) VALUES ('Bearings', 2);
-
+-- Added items to our items list AKA our menu for the restaurant
 
 INSERT INTO items (id, name, price, image_url, description)
 VALUES ('1', 'Crunchy Burger', 8, '', 'A delicious burger with a crunch made from our finest beef');
