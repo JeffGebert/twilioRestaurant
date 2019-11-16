@@ -1,6 +1,6 @@
 -- Creating the items on the menu table
 
-DROP TABLE IF EXISTS items cascade;
+DROP TABLE IF EXISTS items CASCADE;
 CREATE TABLE items (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(75) NOT NULL,
