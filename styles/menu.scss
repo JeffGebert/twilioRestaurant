@@ -7,3 +7,33 @@ body {
     color: #244751;
   }
 }
+
+
+
+.MenuPageContainer {
+  display:grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: auto;
+  margin: 100px;
+
+}
+
+.product {
+  border: 2px solid red;
+  max-width: 300px;
+  height: 300px;
+  display:flex;
+  flex-direction:column;
+}
+
+.productImage {
+  border: 2px solid purple;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.add2cart {
+  border: 2px solid green;
+  display:flex;
+  justify-content: space-between;
+}
