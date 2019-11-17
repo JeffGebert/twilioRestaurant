@@ -10,8 +10,14 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("menu");
+    db.query(`SELECT * FROM items;`)
+    .then(res => {
+      let x = res.rows;
+      let templateVars = {items: x}
+      res.render("menu", templateVars);
+    })
   });
   return router;
 };
+
 
