@@ -6,5 +6,5 @@ CREATE TABLE customers (
   name VARCHAR(50) NOT NULL,
   email VARCHAR(50) NOT NULL,
   phone_number VARCHAR(15) NOT NULL,
-  credit_card VARCHAR(16) NOT NULL,
+  credit_card VARCHAR(16) NOT NULL
 );

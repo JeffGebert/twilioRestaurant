@@ -6,5 +6,5 @@ CREATE TABLE items (
   name VARCHAR(75) NOT NULL,
   price INT,
   image_url VARCHAR(250) NOT NULL,
-  description VARCHAR(500) NOT NULL,
+  description VARCHAR(500) NOT NULL
 );
