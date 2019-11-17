@@ -9,14 +9,20 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+
   router.get("/", (req, res) => {
+
     db.query(`SELECT * FROM items;`)
-    .then(res => {
-      let x = res.rows;
-      let templateVars = {items: x}
-      res.render("menu", templateVars);
-    })
+      .then(data => {
+        let menuItems = data.rows;
+        res.render("menu", {menuItems:menuItems});
+      })
+      .catch(error => {
+        console.log(error)
+      });
+
   });
+
   return router;
 };
 
