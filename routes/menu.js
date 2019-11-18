@@ -15,6 +15,10 @@ module.exports = (db) => {
     db.query(`SELECT * FROM items;`)
       .then(data => {
         let menuItems = data.rows;
+        menuItems.map(item => {
+          item.quantity=0;
+        })
+        console.log(menuItems)
         res.render("menu", {menuItems:menuItems});
       })
       .catch(error => {

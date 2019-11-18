@@ -18,23 +18,23 @@
 
     <container class = "MenuPageContainer">
 
-      <% for (item in menuItems) { %>
+      <% for (let item of menuItems) { %>
       <div class = "product">
         <div class = "columnWrapper">
-        <span class = "itemTitle"><%= menuItems[item].name %></span>
+        <span class = "itemTitle"><%= item.name %></span>
         </div>
         <div class = "imageWrapper">
-        <img class = "productImage" src=<%= menuItems[item].image_url %> >
+        <img class = "productImage" src=<%= item.image_url %> >
         </div>
         <div class = "columnWrapper">
-          <span class = "productDescription"><%=menuItems[item].description %></span>
+          <span class = "productDescription"><%=item.description %></span>
         </div>
         <div class = "add2cart">
-          <span>itemcount</span>
-          <span><%= menuItems[item].price %></span>
+          <span class = "itemCount">0</span>
+          <span><%= item.price %></span>
           <div>
-            <button>+</button>
-            <button>-</button>
+            <button class="buttonCount">+</button>
+            <button class="buttonCount">-</button>
           </div>
         </div>
       </div>
