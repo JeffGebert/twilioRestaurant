@@ -24,7 +24,7 @@ INSERT INTO items (id, name, price, image_url, description)
 VALUES ('6', 'Lasagna Bologna', 9, 'https://images.unsplash.com/photo-1560750133-c5d4ef4de911?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80', 'Homemade lasagna, freshly made every day');
 
 
---no picture
+
 INSERT INTO items (id, name, price, image_url, description)
 VALUES ('7', 'Classic Poutine', 7, 'https://cottagelife.com/wp-content/uploads/2014/08/Foodio.jpg', 'Classic style french fries with lots of cheese and gravy !');
 
