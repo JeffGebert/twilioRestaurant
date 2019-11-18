@@ -52,7 +52,7 @@ app.use("/owners", ownerRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("menu");
+  res.redirect("/menu")
 });
 
 app.listen(PORT, () => {
