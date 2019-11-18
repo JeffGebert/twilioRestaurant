@@ -16,10 +16,9 @@ $(document).ready(function() {
 
   }
 
-    $(".itemTotal").text(itemsTotal);
-    $(".amountTotal").text(amountTotal);
-
-
+  $(".itemTotal").text(itemsTotal);
+  $(".amountTotal").text(amountTotal);
+  $(".btn-checkout").text("Place Order");
 
 })
 
