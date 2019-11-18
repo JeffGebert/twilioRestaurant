@@ -35,7 +35,8 @@ $(document).ready(function() {
     $(this).closest('.add2cart').find('.itemCount').text(menuItems[itemTitle]);
     //$form.find("textarea").val("");
 
-    console.log(menuItems);
+    window.localStorage.setItem('cart', JSON.stringify(menuItems));
+
 
 
 
