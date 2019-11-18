@@ -1,13 +1,44 @@
 //on document ready hide the empy and limit paragraph texts which are displayed when there is too many characters or an empty string is entered.
 $(document).ready(function() {
-
-  console.log("hello slav")
+  const menuItems = {};
 
   //when the tweet button is clicked the following code is run on sumbit.
   const $buttonCount = $('.buttonCount');
   $buttonCount.click(function(event) {
-    console.log($(this).text());
-    console.log($(this).closest('.product').find('.itemTitle').text())
+
+    //Determine Item and incrementer for quantity
+    let incrementer = $(this).text();
+    let itemTitle = $(this).closest('.product').find('.itemTitle').text();
+
+
+
+    if (menuItems[itemTitle]) {
+      if (incrementer === '+') {
+        if (itemTitle === "Exotic Venezuelan Sausage") {
+        } else {
+          menuItems[itemTitle] +=1
+        }
+      } else {
+        menuItems[itemTitle] -=1
+        if (menuItems[itemTitle] ===0) {
+          delete menuItems[itemTitle]
+          $(this).closest('.add2cart').find('.itemCount').text(0);
+        }
+      }
+    } else {
+      if (incrementer === '+') {
+        menuItems[itemTitle] =1
+      }
+
+    }
+
+    $(this).closest('.add2cart').find('.itemCount').text(menuItems[itemTitle]);
+    //$form.find("textarea").val("");
+
+    console.log(menuItems);
+
+
+
 
 
     // event.preventDefault();
