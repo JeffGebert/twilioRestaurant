@@ -9,6 +9,8 @@ $(document).ready(function() {
     //Determine Item and incrementer for quantity
     let incrementer = $(this).text();
     let itemTitle = $(this).closest('.product').find('.itemTitle').text();
+    let itemPrice = $(this).closest('.product').find('.itemPrice').text();
+
 
 
 
@@ -16,24 +18,25 @@ $(document).ready(function() {
       if (incrementer === '+') {
         if (itemTitle === "Exotic Venezuelan Sausage") {
         } else {
-          menuItems[itemTitle] +=1
+          menuItems[itemTitle].quantity +=1
         }
       } else {
-        menuItems[itemTitle] -=1
-        if (menuItems[itemTitle] ===0) {
+        menuItems[itemTitle].quantity -=1
+        if (menuItems[itemTitle].quantity ===0) {
           delete menuItems[itemTitle]
           $(this).closest('.add2cart').find('.itemCount').text(0);
         }
       }
     } else {
       if (incrementer === '+') {
-        menuItems[itemTitle] =1
+        menuItems[itemTitle] = {quantity:1, price: itemPrice}
       }
 
     }
-
-    $(this).closest('.add2cart').find('.itemCount').text(menuItems[itemTitle]);
-    //$form.find("textarea").val("");
+    if (menuItems[itemTitle]) {
+    $(this).closest('.add2cart').find('.itemCount').text(menuItems[itemTitle].quantity);
+    }
+    console.log(menuItems);
 
     window.localStorage.setItem('cart', JSON.stringify(menuItems));
 

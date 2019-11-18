@@ -1,0 +1,14 @@
+.checkoutLayout {
+  border: 2px solid green;
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin:25px;
+}
+
+.payment {
+  border: 4px solid red;
+  display:flex;
+  flex-direction: column;
+  align-content: space-between;
+}

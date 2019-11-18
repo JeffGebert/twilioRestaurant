@@ -2,19 +2,44 @@
 <html lang="en">
 <header>
         <% include ./partials/_header %>
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+        <script src = "/scripts/checkout.js"></script>
 </header>
   <head>
-    <title>Home Page</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/checkout.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
   <body>
-    <h1>Hello World!</h1>
+    <container class = "checkoutLayout">
+      <div>
+        <table class="itemTable">
+          <tr class = "headerTable">
+            <th>Items</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+          </tr>
+
+
+          <tr><td>Total</td><td class = "itemTotal"><td class = "amountTotal"></td></tr>
+        </table>
+
+      </div>
+      <div class = "payment">
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Phone Number">
+        <input type="text" placeholder="Credit Card">
+      </div>
+
+    </container>
   </body>
 </html>

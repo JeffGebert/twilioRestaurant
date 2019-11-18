@@ -18,7 +18,6 @@ module.exports = (db) => {
         menuItems.map(item => {
           item.quantity=0;
         })
-        console.log(menuItems)
         res.render("menu", {menuItems:menuItems});
       })
       .catch(error => {
