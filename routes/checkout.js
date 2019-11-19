@@ -16,7 +16,7 @@ module.exports = (db) => {
 
   router.post("/", (res, req) => {
   console.log("req", req.body)
-  db.query(`INSERT INTO customers (name, email, phone_number, credit_card) VALUES (${req.body.name}, ${req.body.email}, ${req.body.phone_number}, ${req.body.credit_card}`)
+  //db.query(`INSERT INTO customers (name, email, phone_number, credit_card) VALUES (${req.body.name}, ${req.body.email}, ${req.body.phone_number}, ${req.body.credit_card}`)
   });
 
   return router;
