@@ -1,0 +1,32 @@
+.partialHeader {
+  background-color:black;
+  display: sticky;
+  height: 100px;
+}
+
+header nav {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
+header nav a {
+  margin-top:20px;
+  color:white;
+  width: 400px;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+
+.btn-checkout {
+  font-size: 24px;
+  margin-top: 20px;
+  height: 50px;
+  width: 150px;
+  background-color: RGB(252, 177,2);
+  color:white;
+  border-radius:2px;
+}
