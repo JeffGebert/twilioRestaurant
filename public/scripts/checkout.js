@@ -13,12 +13,34 @@ $(document).ready(function() {
     amountTotal += cart[item].price * cart[item].quantity
     $(".headerTable").after($row)
 
-
   }
 
-  $(".itemTotal").text(itemsTotal);
-  $(".amountTotal").text(amountTotal);
-  $(".btn-checkout").text("Place Order");
+    $(".itemTotal").text(itemsTotal);
+    $(".amountTotal").text(amountTotal);
+
+    const $checkout = $('.form-inline');
+    $checkout.submit(function(event) {
+     event.preventDefault();
+      console.log("submitting the form")
+
+      const customerDetails = {}
+
+      customerDetails.name = $('#name').val()
+      customerDetails.email = $('#email').val()
+      customerDetails.phone_number = $('#phone_number').val()
+      customerDetails.credit_card = $('#credit_card').val()
+      // console.log('customerDetails', customerDetails)
+
+
+    $.ajax({
+      url: '/checkout',
+      type:'POST',
+      data: customerDetails,
+      dataType: "json"
+    })
+    .then((data)=> console.log("DATA FROM SERVER", data))
+    .catch((error) => console.log('error', error))
+    })
+
 
 })
-
