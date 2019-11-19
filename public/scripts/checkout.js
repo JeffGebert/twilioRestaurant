@@ -25,39 +25,20 @@ $(document).ready(function() {
 
       const customerDetails = {}
 
-
       customerDetails.name = $('#name').val()
       customerDetails.email = $('#email').val()
       customerDetails.phone_number = $('#phone_number').val()
       customerDetails.credit_card = $('#credit_card').val()
-      console.log('customerDetails', customerDetails)
+      // console.log('customerDetails', customerDetails)
 
-      customerInfo = JSON.stringify(customerDetails)
 
     $.ajax({
       url: '/checkout',
       type:'POST',
       data: customerDetails,
-      // data: {name: 'Bryan',
-      // email: 'bryan@gmail.com',
-      // phone_number: '514-984-2349',
-      // credi_card: '3226591446'
-      // },
-
       dataType: "json"
-
-
     })
     .then((data)=> console.log("DATA FROM SERVER", data))
-    // .done(function() {
-    //   alert( "second success" );
-    // })
-    // .fail(function() {
-    //   alert( "error" );
-    // })
-    // .always(function() {
-    //   alert( "finished" );
-    // });
     .catch((error) => console.log('error', error))
     })
 
