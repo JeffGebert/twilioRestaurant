@@ -13,13 +13,27 @@ $(document).ready(function() {
     amountTotal += cart[item].price * cart[item].quantity
     $(".headerTable").after($row)
 
-
   }
 
     $(".itemTotal").text(itemsTotal);
     $(".amountTotal").text(amountTotal);
 
+    const customerDetails = {}
+    customerDetails[name] = $('.name').val()
+    customerDetails[email] = $('.email').val()
+    customerDetails[phone_number] = $('.phone_number')
+    customerDetails[credit_card] = $('.credit_card')
+
+    const $checkout = $('.btn-checkout');
+    $checkout.click(function(event) {
+      console.log("hello")
+    $.ajax({
+      type:'POST',
+      url: 'http://localhost:8080/checkout',
+      data: JSON.stringify(customerDetails),
+      dataType: "json"
+    })
+    });
 
 
-})
-
+  })
