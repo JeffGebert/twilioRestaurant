@@ -2,9 +2,13 @@
 <html lang="en">
 <header>
         <% include ./partials/_header %>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+              <script src = "/scripts/owners.js"></script>
 </header>
   <head>
-    <title>Home Page</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -15,6 +19,25 @@
   </head>
 
   <body>
-    <h1>Hello World!</h1>
+      <container class = "checkoutLayout">
+          <div>
+            <table class="itemTable">
+              <tr class = "headerTable">
+                <th>Items</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+              </tr>
+
+
+              <tr><td>Total</td><td class = "itemTotal"><td class = "amountTotal"></td></tr>
+            </table>
+          </div>
+            <th> When should we tell x to pickup his order ?</th>
+            <div class = "waitTime">
+            <input  type="text" placeholder="waitingTime" id="waitingTime">
+
+            </div>
+
+
   </body>
-</html>
+ </html>

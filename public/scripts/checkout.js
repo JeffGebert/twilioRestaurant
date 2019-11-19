@@ -18,9 +18,10 @@ $(document).ready(function() {
     $(".itemTotal").text(itemsTotal);
     $(".amountTotal").text(amountTotal);
 
-    const $checkout = $('.btn-checkout');
-    $checkout.click(function(event) {
-     // event.preventDefault();
+    const $checkout = $('.form-inline');
+    $checkout.submit(function(event) {
+     event.preventDefault();
+      console.log("submitting the form")
 
       const customerDetails = {}
 
@@ -36,17 +37,18 @@ $(document).ready(function() {
     $.ajax({
       url: '/checkout',
       type:'POST',
-      data: {name: 'Bryan',
-      email: 'bryan@gmail.com',
-      phone_number: '514-984-2349',
-      credi_card: '3226591446'
-      },
+      data: customerDetails,
+      // data: {name: 'Bryan',
+      // email: 'bryan@gmail.com',
+      // phone_number: '514-984-2349',
+      // credi_card: '3226591446'
+      // },
 
-      // dataType: "json"
+      dataType: "json"
 
 
     })
-    .then(()=> console.log("DATA FROM SERVER", data))
+    .then((data)=> console.log("DATA FROM SERVER", data))
     // .done(function() {
     //   alert( "second success" );
     // })
