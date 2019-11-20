@@ -1,21 +1,21 @@
-// $(document).ready(function() {
-//   console.log("loading owners.js")
-//   let cart = JSON.parse(window.localStorage.getItem('cart'));
-//   console.log(cart)
-//   let itemsTotal = 0;
-//   let amountTotal = 0;
+$(document).ready(function() {
 
-//   for (item in cart) {
-//     let $row = `
-//     <tr><td>${item}</td><td>${cart[item].quantity}</td><td>${cart[item].price}</td></tr>
-//     `
-//     itemsTotal += cart[item].quantity
-//     amountTotal += cart[item].price * cart[item].quantity
-//     $(".headerTable").after($row)
+  const $timeToMake = $('.time');
+    $timeToMake.click(function(event) {
+      console.log("hello");
 
-//   }
 
-//     $(".itemTotal").text(itemsTotal);
-//     $(".amountTotal").text(amountTotal);
-//   })
+    $.ajax({
+      url: '/owners/orders/:id',
+      type:'POST',
+      data: {name:"jeff"},
+      dataType: "json"
+      })
+    .then((data)=> {
+      $('.waitTime').hide();
 
+      console.log("DATA FROM SERVER", data)})
+    .catch((error) => console.log('error', error))
+    })
+
+});

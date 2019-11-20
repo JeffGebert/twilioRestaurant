@@ -7,6 +7,9 @@
 
 const express = require('express');
 const router  = express.Router();
+const accountSid = 'AC35e90fe0ec998a9ae4a0f7aa24ae6035';
+const authToken = '74ebe215eef61b067a3b4d748720975e';
+const client = require('twilio')(accountSid, authToken);
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
@@ -36,6 +39,33 @@ module.exports = (db) => {
 // db.query(`INSERT INTO orders (time_to_make) VALUES ($1)`,values1)
 
   })
+
+
+
+
+
+
+  router.post('/orders/:id', (req, res) => {
+
+    client.messages
+    .create({
+      body: 'test',
+      from: '+12055488770',
+      to: '+13065307801'
+    })
+
+    .then(message => console.log(message.sid));
+
+
+    res.send({name:"hello"});
+
+
+  })
+
+
+
+
+
   return router;
 };
 
