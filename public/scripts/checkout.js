@@ -36,8 +36,19 @@ $(document).ready(function() {
       type:'POST',
       data: customerDetails,
       dataType: "json"
-    })
-    .then((data)=> console.log("DATA FROM SERVER", data))
+      })
+    .then((data)=> {
+      $('.limit').hide();
+      $('.empty').hide();
+
+      $('#name').hide()
+      $('#email').hide()
+      $('#phone_number').hide()
+      $('#credit_card').hide()
+      $('#postOrder').show()
+
+
+      console.log("DATA FROM SERVER", data)})
     .catch((error) => console.log('error', error))
     })
 

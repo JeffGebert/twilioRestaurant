@@ -12,6 +12,7 @@
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
+    "asynch": "^0.5.2",
     "body-parser": "^1.19.0",
     "chalk": "^2.4.2",
     "dotenv": "^2.0.0",
@@ -20,7 +21,8 @@
     "morgan": "^1.9.1",
     "node-sass-middleware": "^0.11.0",
     "pg": "^6.4.2",
-    "pg-native": "^3.0.0"
+    "pg-native": "^3.0.0",
+    "twilio": "^3.37.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"

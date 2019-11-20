@@ -7,6 +7,11 @@
 
 const express = require('express');
 const router  = express.Router();
+const accountSid = 'AC35e90fe0ec998a9ae4a0f7aa24ae6035';
+const authToken = '74ebe215eef61b067a3b4d748720975e';
+const client = require('twilio')(accountSid, authToken);
+
+
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
@@ -15,51 +20,54 @@ module.exports = (db) => {
   });
 
 router.post('/', (req, res) => {
-  console.log("name",req.body.name)
-  console.log("email",req.body.email)
-  console.log('phone numer', req.body.phone_number)
-  console.log('credit card', req.body.credit_card)
-  console.log("req", req.body);
 
 
-  let values = [`${req.body.name}`, `${req.body.email}`, `${req.body.phone_number}`, `${req.body.credit_card}`]
+let values = [`${req.body.name}`, `${req.body.email}`, `${req.body.phone_number}`, `${req.body.credit_card}`]
 
 db.query(`INSERT INTO customers (name, email, phone_number, credit_card) VALUES ($1, $2, $3, $4) RETURNING id`, values)
 .then(res => {
-  console.log("success1")
+
   let customer_id = res.rows[0].id;
-  console.log("customer_id", customer_id);
   let values2 = [`${customer_id}`, `1`];
+
+
   db.query(`INSERT INTO orders (customer_id, restaurant_owner_id) VALUES ($1, $2) RETURNING id`, values2)
   .then (res => {
-    console.log("success2")
+
     let order_id = res.rows[0].id;
+
     for (item in req.body.items) {
+
       let valuesLoop = [item]
+
       db.query(`SELECT id FROM items where name = $1`, valuesLoop)
       .then (res=> {
-        console.log("success3")
-        console.log("response", res);
+
         let item_id = res.rows[0].id;
-        let values3 = [`${item_id}`, `${order_id}`, `${item.quantity}`];
+        let values3 = [`${item_id}`, `${order_id}`, `${req.body.items[item].quantity}`];
+        console.log("hell0000")
+
         db.query(`INSERT INTO orders_items (item_id, order_id, quantity) VALUES ($1, $2, $3)`, values3)
         .then (res => {
-          console.log ("order " + id + "successfully submitted");
+          console.log("Order " + order_id + " Submitted");
+          client.messages
+          .create({
+            body: req.body.name + ' your order has been placed.  Please standbye for updates on when you can pick up your order',
+            from: '+12055488770',
+            to: '+13065307801'
+   })
+  .then(message => console.log(message.sid));
+
         })
       })
     }
-
-
-
   })
 
-  //db.query(`INSERT INTO orders_items (item_id, quantity) VALUES ()`)
-
-  return db.query(`SELECT * FROM customers`);
 })
-})
+res.send({name:"cats"})
+});
 
-// db.query(`SELEnCT `)
 
   return router;
+
 };
