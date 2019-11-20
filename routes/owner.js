@@ -45,13 +45,6 @@ module.exports = (db) => {
 // let values1 = [`${req.body.waitingTime}`]
 // db.query(`INSERT INTO orders (time_to_make) VALUES ($1)`,values1)
 
-<<<<<<< HEAD
-=======
-  })
-
-
-
-
 
 
   router.post('/orders/:id', (req, res) => {
@@ -74,7 +67,6 @@ module.exports = (db) => {
 
 
 
->>>>>>> feature/ownerResponse
 
   return router;
 };
