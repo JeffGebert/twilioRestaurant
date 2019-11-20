@@ -14,33 +14,49 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/owners.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
 
 
   <body>
-<container class= "ownersContainer">
-          <div>
-            <table class="itemTable">
-              <tr class = "headerTable">
-                <th>Items</th>
-                <th>Quantity</th>
-                <th>Amount</th>
-              </tr>
+    <container class= "ownersContainer">
+      <div class='itemTable'>
+        <table class='itemTable'>
+          <tr class = "headerTable">
+            <th>Items</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+
+          <% for (item in order.items) { %>
+          <tr>
+            <td> <%= order.items[item].name %> </td><td><%= order.items[item].quantity %> </td><td> <%= order.items[item].price %> </td><td> <%= order.items[item].price * order.items[item].quantity %> </td>
+            <!-- <td><%= order.items[item].quantity %> </td>
+            <td><%= order.items[item].price %> </td>
+            <td><%= order.items[item].price * order.items[item].quantity %> </td> -->
 
 
-              <tr><td>Total</td><td class = "itemTotal"><td class = "amountTotal"></td></tr>
+          </tr>
+
+           <%  console.log("EBS", order.items[item].name, order.items[item].price, order.items[item].quantity) %>
+
+           <% } %>
+
+          </table>
+          <tr class='Total'><td>Total</td><td class = "itemTotal"><td class = "amountTotal"></td></tr>
+          <table>
+            </table>
             </table>
           </div>
 
-           <div class = "waitTime">
-           <th> When should we tell x to pickup his order ?</th>
+
+          <div class = "waitTime">
+            <th> When should we tell x to pickup his order ?</th>
             <input  type="text" placeholder="waitingTime" id="waitingTime">
             <button class= "time">Submit</button>
 
-            </div>
+          </div>
 
-          </container>
-  </body>
+        </container>
+        </body>
  </html>
