@@ -29,10 +29,9 @@ $(document).ready(function() {
       customerDetails.email = $('#email').val()
       customerDetails.phone_number = $('#phone_number').val()
       customerDetails.credit_card = $('#credit_card').val()
-      // console.log('customerDetails', customerDetails)
+      customerDetails.items=cart;
 
-
-    $.ajax({
+      $.ajax({
       url: '/checkout',
       type:'POST',
       data: customerDetails,
