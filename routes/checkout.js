@@ -25,38 +25,44 @@ router.post('/', (req, res) => {
 let values = [`${req.body.name}`, `${req.body.email}`, `${req.body.phone_number}`, `${req.body.credit_card}`]
 
 db.query(`INSERT INTO customers (name, email, phone_number, credit_card) VALUES ($1, $2, $3, $4) RETURNING id`, values)
-.then(res => {
+.then(data1 => {
 
-  let customer_id = res.rows[0].id;
+  let customer_id = data1.rows[0].id;
   let values2 = [`${customer_id}`, `1`];
 
 
   db.query(`INSERT INTO orders (customer_id, restaurant_owner_id) VALUES ($1, $2) RETURNING id`, values2)
-  .then (res => {
+  .then (data2 => {
 
-    let order_id = res.rows[0].id;
+    let order_id = data2.rows[0].id;
 
     for (item in req.body.items) {
 
       let valuesLoop = [item]
 
       db.query(`SELECT id FROM items where name = $1`, valuesLoop)
-      .then (res=> {
+      .then (data3=> {
 
-        let item_id = res.rows[0].id;
+        let item_id = data3.rows[0].id;
         let values3 = [`${item_id}`, `${order_id}`, `${req.body.items[item].quantity}`];
         console.log("hell0000")
 
         db.query(`INSERT INTO orders_items (item_id, order_id, quantity) VALUES ($1, $2, $3)`, values3)
-        .then (res => {
-          console.log("Order " + order_id + " Submitted");
+        .then (data4 => {
+
+
           client.messages
           .create({
-            body: req.body.name + ' your order has been placed.  Please standbye for updates on when you can pick up your order',
+            body: req.body.name + ' your order at Slav\'s kitchen has been placed.  Your order id is ' + order_id + '.Please standbye for updates on when you can pick up your order',
             from: '+12055488770',
-            to: '+13065307801'
-   })
-  .then(message => console.log(message.sid));
+            to: '+1' + req.body.phone_number
+          })
+
+          .then(message => console.log(message.sid));
+            res.send({
+              name:req.body.name,
+              orderID:order_id
+            })
 
         })
       })
@@ -64,7 +70,6 @@ db.query(`INSERT INTO customers (name, email, phone_number, credit_card) VALUES 
   })
 
 })
-res.send({name:"cats"})
 });
 
 

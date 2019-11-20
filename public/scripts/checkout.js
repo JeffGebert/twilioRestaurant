@@ -46,6 +46,9 @@ $(document).ready(function() {
       $('#phone_number').hide()
       $('#credit_card').hide()
       $('#postOrder').show()
+      $('#postOrder').text("Thank You " + data.name + " for your order.  Your order ID is " + data.orderID + ".  Please standbye for updates...")
+      $('#preOrder').hide()
+
 
 
       console.log("DATA FROM SERVER", data)})

@@ -13,10 +13,18 @@
   align-content: space-between;
 }
 
-
-
 #postOrder {
   display: none;
   width: 300px;
   height: 200px;
+}
+
+input {
+  margin: 30px;
+}
+
+#preOrder {
+  margin-top: 30px;
+  font-size: 20px;
+
 }
