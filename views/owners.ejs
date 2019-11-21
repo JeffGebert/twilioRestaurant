@@ -9,60 +9,64 @@
 </header>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-
+​
 </head>
-
+​
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/owners.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/owners.js"></script>
-
-
+​
+​
   <body>
     <container class= "ownersContainer">
       <div class='itemTable'>
-        <table class='itemTable'>
+        <table class='itemsTable'>
           <tr class = "headerTable">
             <th>Items</th>
             <th>Quantity</th>
-            <th>Price</th>
+            <!-- <th>Price</th> -->
           </tr>
-
+​
           <% for (item in order.items) { %>
           <tr>
-            <td> <%= order.items[item].name %> </td><td><%= order.items[item].quantity %> </td><td> <%= order.items[item].price %> </td><td> <%= order.items[item].price * order.items[item].quantity %> </td>
+            <td> <%= order.items[item].name %> </td><td><%= order.items[item].quantity %> </td>
+            <!-- <td> <%= order.items[item].price %> </td> -->
+            <!-- <td> <%= order.items[item].price * order.items[item].quantity %> </td> -->
             <!-- <td><%= order.items[item].quantity %> </td>
             <td><%= order.items[item].price %> </td>
             <td><%= order.items[item].price * order.items[item].quantity %> </td> -->
-
-
+​
+​
           </tr>
-
+​
            <%  console.log("EBS", order.items[item].name, order.items[item].price, order.items[item].quantity) %>
-
+​
            <% } %>
-
-          </table>
+​
           <tr class='Total'><td>Total</td><td class = "itemTotal"><td class = "amountTotal"></td></tr>
-          <table>
-            </table>
+​
             </table>
           </div>
-
-
+​
           <div class = "waitTime" data-identifier = "<%= order.phone_number %>">
-            <th> When should we tell <%= order.customer_name %> to pickup his order ?</th>
+​
+            <div  class='customer'>
+​
+            <th id="customer_name"> When should we tell <%= order.customer_name %> to pickup his order ?</th>
             <input  type="text" placeholder="waitingTime" id="waitingTime">
             <button class="time" data-identifier = "<%= order.order_id %>">Submit</button>
-
+​
           </div>
-
-          <div class = "afterCustomerNotification">
-            <span class = "afterCustomerNotificationTime"></span>
-          </div>
-
-        </container>
+​
+        </div>
+        <div class = "afterCustomerNotification">
+          <span class = "afterCustomerNotificationTime"></span>
+        </div>
+​
+​
+     </container>
         </body>
  </html>
