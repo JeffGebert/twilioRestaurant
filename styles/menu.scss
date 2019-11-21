@@ -14,10 +14,10 @@ body {
   grid-template-columns: 500px 500px 500px;
   grid-template-rows: auto;
   grid-column-gap: 80px;
-  grid-row-gap: 80px;
+  grid-row-gap: 50px;
 
   background-image: url("https://images.unsplash.com/photo-1526494351053-7f0eee3c4216?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
-
+  margin-bottom: 30px;
 }
 
 .product {
@@ -29,11 +29,15 @@ body {
   margin-top: 25px;
   border-radius: 5px;
   font-family: 'Permanent Marker', cursive;
-  //box-shadow: 0px 0px 20px 10px red;
   border:solid 5px black;
   border-radius: 50px;
   background-image:round;
 
+
+}
+
+.product:hover {
+  box-shadow: 0px 0px 20px 10px black;
 
 }
 
@@ -43,6 +47,7 @@ body {
   width: 300px;
 
 }
+
 
 
 .productImage {
