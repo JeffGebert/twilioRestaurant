@@ -2,6 +2,9 @@
 
 body {
   background-color: #EEE;
+  background-image: url("https://images.unsplash.com/photo-1526494351053-7f0eee3c4216?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
+  background-size:cover;
+  background-repeat: no-repeat;
 
   h1 {
     color: #244751;
@@ -10,20 +13,25 @@ body {
 
 
 .MenuPageContainer {
+  margin: 100px auto 0;
   display:grid;
-  grid-template-columns: 500px 500px 500px;
+  grid-template-columns: 30% 30% 30%;
   grid-template-rows: auto;
-  grid-column-gap: 80px;
-  grid-row-gap: 50px;
+  grid-column-gap: 5%;
+  grid-row-gap: 40px;
+  max-width: 1500px;
+  width:100%;
+}
 
-  background-image: url("https://images.unsplash.com/photo-1526494351053-7f0eee3c4216?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
-  margin-bottom: 30px;
+@media screen and (max-width:1200px) {
+  .MenuPageContainer {
+    grid-template-columns: 47.5% 47.5%;
+  }
 }
 
 .product {
   display:flex;
-  background-color: whitesmoke;
-  max-width: 500px;
+  background-color: rgba(245, 245, 245, 0.856);
   flex-direction:column;
   margin-left: 30px;
   margin-top: 25px;
