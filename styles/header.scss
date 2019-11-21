@@ -24,13 +24,23 @@ header nav a {
 
 
 .btn-checkout {
-  font-size: 24px;
+  font-size: 30px;
   margin-top: 20px;
   height: 50px;
   width: 150px;
-  background-color: RGB(252, 177,2);
+  background-color: black;
   color:white;
   border-radius:2px;
+  border:none;
+  font-family:'Permanent Marker', cursive;
+  outline: none;
+  margin-right: 250px;
+}
+
+.btn-checkout:hover {
+  font-size: 35px;
+  background-color: black ;
+  color: red;
 }
 
 

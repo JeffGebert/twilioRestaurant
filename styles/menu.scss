@@ -90,13 +90,35 @@ body {
 }
 
 .plus {
-  background:green;
+  background: #44D362;
+  display: inline-block;
   border-radius: 5px;
+  outline: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .minus {
-  background:red;
+  background:#DC453D;
+  display: inline-block;
   border-radius: 5px;
+  outline: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.plus:hover {
+background-color: #77DF79;
+border-color: #77DF79;
+}
+
+.minus:hover {
+background-color:#FF6961;
+border-color: #FF6961;
 }
 
 
