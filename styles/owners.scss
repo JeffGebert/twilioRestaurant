@@ -22,6 +22,7 @@ html, body {
     font-size: 30px;
     background-color: rgba(245, 245, 245, 0.856);;
     border: 5px solid black;
+    border-top: transparent;
   }
   .itemsTable {
     width: 100%;
@@ -63,8 +64,14 @@ html, body {
   }
 
   .afterCustomerNotification {
+    display:none;
+    height: 100px;
     background-color: rgba(245, 245, 245, 0.856);
     margin-top:300px;
+    font-size:20px;
+    max-width: 300px;
+    border-radius: 3px;
+    margin-right:60px;
 
   }
 

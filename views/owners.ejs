@@ -30,23 +30,15 @@
             <!-- <th>Price</th> -->
           </tr>
 ​
-          <% for (item in order.items) { %>
+          <% let itemcount = 0;
+            for (item in order.items) {
+            itemcount += order.items[item].quantity; %>
           <tr>
-            <td> <%= order.items[item].name %> </td><td><%= order.items[item].quantity %> </td>
-            <!-- <td> <%= order.items[item].price %> </td> -->
-            <!-- <td> <%= order.items[item].price * order.items[item].quantity %> </td> -->
-            <!-- <td><%= order.items[item].quantity %> </td>
-            <td><%= order.items[item].price %> </td>
-            <td><%= order.items[item].price * order.items[item].quantity %> </td> -->
-​
-​
-          </tr>
-​
-           <%  console.log("EBS", order.items[item].name, order.items[item].price, order.items[item].quantity) %>
-​
+            <td> <%= order.items[item].name %> </td><td><%= order.items[item].quantity %> </td>​
+          </tr>​
            <% } %>
 ​
-          <tr class='Total'><td>Total</td><td class = "itemTotal"><td class = "amountTotal"></td></tr>
+          <tr class='Total'><td>Total</td><td class = "itemTotal"><%= itemcount %></td></tr>
 ​
             </table>
           </div>
@@ -63,7 +55,7 @@
 ​
         </div>
         <div class = "afterCustomerNotification">
-          <span class = "afterCustomerNotificationTime"></span>
+          <span class = "afterCustomerNotificationTime" data-identifier="<%= order.customer_name %>"></span>
         </div>
 ​
 ​

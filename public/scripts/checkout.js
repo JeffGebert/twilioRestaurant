@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   for (item in cart) {
     let $row = `
-    <tr><td>${item}</td><td>${cart[item].quantity}</td><td>${cart[item].price}</td></tr>
+    <tr><td>${item}</td><td>${cart[item].quantity}</td><td>$ ${cart[item].price}</td></tr>
     `
     itemsTotal += cart[item].quantity
     amountTotal += cart[item].price * cart[item].quantity
@@ -16,7 +16,7 @@ $(document).ready(function() {
   }
 
     $(".itemTotal").text(itemsTotal);
-    $(".amountTotal").text(amountTotal);
+    $(".amountTotal").text('$ '+ amountTotal);
 
     const $checkout = $('.form-inline');
     $checkout.submit(function(event) {

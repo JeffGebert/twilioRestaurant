@@ -9,7 +9,7 @@ $(document).ready(function() {
       console.log($phoneNumber);
       $orderID = $(`.time`).attr("data-identifier");
       console.log("order", $orderID)
-      $customerName = $(`#customer_name`).text();
+      $customerName = $(`.afterCustomerNotificationTime`).attr("data-identifier");
       console.log($customerName);
       const data = {
         waitTime: $waitTime.val(),
@@ -26,7 +26,7 @@ $(document).ready(function() {
     .then((data2)=> {
       $('.waitTime').hide();
       $(`.afterCustomerNotification`).show();
-      $(`.afterCustomerNotificationTime`).text("We let the customer know it will be " + data.waitTime + " minutes until their order is ready");
+      $(`.afterCustomerNotificationTime`).text("We let " + $customerName + " know it will be " + data.waitTime + " minutes until their order is ready");
 
 
       console.log("DATA FROM SERVER", data)})
