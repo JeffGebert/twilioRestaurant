@@ -6,7 +6,6 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-              <script src = "/scripts/owners.js"></script>
 </header>
 
 
@@ -50,11 +49,15 @@
           </div>
 
 
-          <div class = "waitTime">
+          <div class = "waitTime" data-identifier = "<%= order.phone_number %>">
             <th> When should we tell <%= order.customer_name %> to pickup his order ?</th>
             <input  type="text" placeholder="waitingTime" id="waitingTime">
-            <button class= "time">Submit</button>
+            <button class="time" data-identifier = "<%= order.order_id %>">Submit</button>
 
+          </div>
+
+          <div class = "afterCustomerNotification">
+            <span class = "afterCustomerNotificationTime"></span>
           </div>
 
         </container>

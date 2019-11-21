@@ -45,15 +45,23 @@ db.query(`INSERT INTO customers (name, email, phone_number, credit_card) VALUES 
 
         let item_id = data3.rows[0].id;
         let values3 = [`${item_id}`, `${order_id}`, `${req.body.items[item].quantity}`];
-        console.log("hell0000")
 
         db.query(`INSERT INTO orders_items (item_id, order_id, quantity) VALUES ($1, $2, $3)`, values3)
         .then (data4 => {
 
+          let restaurantmessage = 'Order #' + order_id + ' has been placed.  The order is '
+          for (item in req.body.items) {
+            console.log(req.body)
+            restaurantmessage += req.body.items[item].quantity + ' ' + item + ','
+          }
 
+          restaurantmessage.slice(0, restaurantmessage.length-1);
+          restaurantmessage += ' please login to website to let the customer know how long it will take to prepare order'
+
+          console.log(restaurantmessage);
           client.messages
           .create({
-            body: req.body.name + ' your order at Slav\'s kitchen has been placed.  Your order id is ' + order_id + '.Please standbye for updates on when you can pick up your order',
+            body: restaurantmessage,
             from: '+12055488770',
             to: '+1' + req.body.phone_number
           })
