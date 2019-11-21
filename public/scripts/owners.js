@@ -9,6 +9,8 @@ $(document).ready(function() {
       console.log($phoneNumber);
       $orderID = $(`.time`).attr("data-identifier");
       console.log("order", $orderID)
+      $customerName = $(`#customer_name`).text();
+      console.log($customerName);
       const data = {
         waitTime: $waitTime.val(),
         phoneNumber: $phoneNumber,
