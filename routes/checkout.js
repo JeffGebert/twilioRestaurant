@@ -7,8 +7,8 @@
 
 const express = require('express');
 const router  = express.Router();
-const accountSid = 'AC35e90fe0ec998a9ae4a0f7aa24ae6035';
-const authToken = '74ebe215eef61b067a3b4d748720975e';
+const accountSid = 'AC7cd28a441cd4e68143d458358e486538';
+const authToken = 'a6226bf0c4d56aa07b9c5ab63d72c374';
 const client = require('twilio')(accountSid, authToken);
 
 
@@ -62,7 +62,7 @@ db.query(`INSERT INTO customers (name, email, phone_number, credit_card) VALUES 
           client.messages
           .create({
             body: restaurantmessage,
-            from: '+12055488770',
+            from: '+17738400978',
             to: '+1' + req.body.phone_number
           })
 

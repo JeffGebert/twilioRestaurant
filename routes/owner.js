@@ -7,8 +7,8 @@
 
 const express = require('express');
 const router  = express.Router();
-const accountSid = 'AC35e90fe0ec998a9ae4a0f7aa24ae6035';
-const authToken = '74ebe215eef61b067a3b4d748720975e';
+const accountSid = 'AC7cd28a441cd4e68143d458358e486538';
+const authToken = 'a6226bf0c4d56aa07b9c5ab63d72c374';
 const client = require('twilio')(accountSid, authToken);
 
 module.exports = (db) => {
@@ -48,12 +48,11 @@ module.exports = (db) => {
 
 
   router.post('/orders/:id', (req, res) => {
-    console.log(req.body.phone_number);
     client.messages
     .create({
       body: 'Slav\'s Kitchen has recieved your order.  The chef would like you to know that your order will be ready in ' + req.body.waitTime + ' minutes.',
-      from: '+12055488770',
-      to: '+1' + `${req.body.phone_number}`
+      from: '+17738400978',
+      to: '+1' + req.body.phoneNumber
     })
 
     .then(message => console.log(message.sid));

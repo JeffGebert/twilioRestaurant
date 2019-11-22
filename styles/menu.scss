@@ -20,12 +20,20 @@ body {
   grid-column-gap: 5%;
   grid-row-gap: 40px;
   max-width: 1500px;
+  margin-left: 10px;
+  margin-right: 10px;
   width:100%;
 }
 
 @media screen and (max-width:1200px) {
   .MenuPageContainer {
     grid-template-columns: 47.5% 47.5%;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .MenuPageContainer {
+    grid-template-columns: auto;
   }
 }
 
@@ -92,8 +100,8 @@ body {
   padding-right: 4px;
   display:flex;
   justify-content: space-between;
-  min-width: 400px;
   font-size: 20px;
+  min-width: 300px;
 
 }
 
