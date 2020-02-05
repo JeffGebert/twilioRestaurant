@@ -1,6 +1,6 @@
 ## Project
 
-twilioRestaurant (Slav's Kitchen) is a food ordering multipage web app that allows you to select the items you would like to order, go to the checkout in order order to fill up your information sheet. Receiving a text confirmation of your order using Twilio API. The owner of the restaurant will receive a text message of your order, to wich he will reply the amount of time it will take for it to be ready, for which the client will receive a text message response. 
+TwilioRestaurant (Slav's Kitchen) is a food ordering multipage web app that allows you to select the items you would like to order, go to the checkout in order order to fill up your information sheet. Receiving a text confirmation of your order using Twilio API. The owner of the restaurant will receive a text message of your order, to wich he will reply the amount of time it will take for it to be ready, for which the client will receive a text message response. 
 
 
 LHL Node Skeleton
