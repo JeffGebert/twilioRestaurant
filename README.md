@@ -4,10 +4,10 @@ TwilioRestaurant (Slav's Kitchen) is a food ordering multipage web app that allo
 
 ## Pictures 
 
-![image1](https://user-images.githubusercontent.com/53335999/74047094-c8749c80-499d-11ea-86a9-ee8263d41872.png)
-![image2](https://user-images.githubusercontent.com/53335999/74047153-dfb38a00-499d-11ea-92e3-ca2e858b39ae.png)
-
-
+![menu](/images/checkout.png)
+![checkout](/images/checkout.png)
+![post_checkout](/images/post_checkout.png)
+![owners](/images/owners.png)
 LHL Node Skeleton
 =========
 
